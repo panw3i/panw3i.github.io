@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            width: 100%;
+        }
+        header {
+            background-color:rgba(233,35,34,1);
+            position: fixed;
+            width: 100%;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+ <header id="header">
+ </header>
+
+ <script>
+     document.documentElement.style.height = "900px";
+     var header = document.getElementById('header');
+
+     window.onscroll = function () {
+
+         // 滚动的高度
+         var sc = document.documentElement.scrollTop;
+
+         // 头部的高度
+         var headerHeight = header.offsetHeight;
+
+         // 滚动调试小于头部的高度
+         if (sc < header.offsetHeight ) {
+             var opacity = sc / headerHeight;
+             header.style.backgroundColor = 'rgba('+'233,35,34,' + (1-opacity) +')';
+             console.log('rgba('+'233,35,34' + opacity +')');
+
+         }else{
+             header.style.transition = "all .8s";
+             header.style.backgroundColor = 'rgba('+'233,35,34,' + 0 +')';
+         }
+
+
+     };
+
+
+     
+
+ </script>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam, architecto at error facere fugiat id labore natus necessitatibus quam quo reprehenderit, repudiandae rerum sint sit totam veniam veritatis voluptates?</p>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 60px;
+            line-height: 100px;
+            border: 1px solid red;
+            text-align: center;
+            font-size: 40px;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<span>00</span>
+<span>:</span>
+<span>00</span>
+<span>:</span>
+<span>00</span>
+
+<script>
+    window.onload = function (ev) {
+        var span = document.getElementsByTagName('span');
+        // 总时长,秒
+        var total = 3600;
+        // 换算成时间
+
+        var timer = setInterval(function () {
+
+            if (total) {
+                total--;
+                var hours = Math.floor(total/3600);
+                var minutes = Math.floor(total%3600 /60);
+                var seconds = Math.floor(total % 60);
+
+
+
+                hours < 10 ? span[0].innerText = '0' + hours : span[0].innerText = hours;
+                minutes < 10 ? span[2].innerText = '0' + minutes : span[2].innerText = minutes;
+                console.log('0'+minutes);
+                seconds < 10 ? span[4].innerText = '0' + seconds : span[4].innerText = seconds;
+            }else{
+                clearInterval(timer);
+            }
+
+        }, 10)
+    }
+</script>
+</body>
+</html>

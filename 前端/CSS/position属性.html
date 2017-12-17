@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <style>
+
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            /*position: relative;*/
+        }
+
+        .son {
+            width: 20px;
+            height: 20px;
+            background-color:gold;
+            position: absolute;
+            margin-left: 10px;
+        }
+
+        p{
+            font-size: 36px;
+        }
+
+        .father span:nth-child(2){
+            position: absolute;
+        }
+
+        /*
+            这里position的行为就象飞碟垂直起飞原位置消失
+
+        */
+    </style>
+</head>
+<body>
+    <div class="father">
+           <p>1</p>
+        <div class="son">
+
+        </div>
+
+        <p>2</p>
+    </div>
+
+    <div class="father">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+</html>

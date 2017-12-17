@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Video-API</title>
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+<script defer="defer" type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+<video id="video" controls="" preload="none" poster="images/poster.png">
+    <source id="mp4" src="trailer.mp4" type="video/mp4">
+    <p>你的用户代理不支持HTML5视频元素。</p>
+</video>
+<div id="buttons">
+    <button class="large awesome" onclick="load();">load()</button>
+    <button class="large awesome" onclick="play();">play()</button>
+    <button class="large awesome" onclick="pause();">pause()</button>
+    <button class="large awesome" onclick="currentTimePlusTen();">currentTime+=10</button>
+    <button class="large awesome" onclick="currentTimeMinusTen();">currentTime-=10</button>
+    <button class="large awesome" onclick="currentTimeFifty();">currentTime=50</button>
+    <br>
+    <button class="large awesome" onclick="playbackRatePlusPlus();">playbackRate++</button>
+    <button class="large awesome" onclick="playbackRateMinusMinus();">playbackRate--</button>
+    <button class="large awesome" onclick="playbackRatePlus();">playbackRate+=0.1</button>
+    <button class="large awesome" onclick="playbackRateMinus();">playbackRate-=0.1</button>
+    <br>
+    <button class="large awesome" onclick="volumePlus();">volume+=0.1</button>
+    <button class="large awesome" onclick="volumeMinus();">volume-=0.1</button>
+    <button class="large red awesome" onclick="volumeMuted();">muted=true</button>
+    <button class="large red awesome" onclick="volumePlay();">muted=false</button>
+</div>
+</body>
+
+</html>
