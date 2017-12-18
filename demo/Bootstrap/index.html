@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="css.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+    <style>
+        * {
+            -background-color: rgba(0,0,0,.1);
+        }
+        
+        .row {
+            outline: 1px dotted gray;
+        }
+
+    </style>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+<!-- .container 根据设备宽度取定值   -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-xs-4">.col-md-8</div>
+        <div class="col-md-4 cl-xs-8">.col-md-4</div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4 col-md-8">.col-md-8</div>
+        <div class="cl-xs-8 col-md-4">.col-md-4</div>
+    </div>
+    </div>
+
+
+<!--表单-->
+<form action="#" class="container container-small">
+    <div class="alert alert-success">登录成功!~</div>
+    <div class="form-group">
+        <label>用户名</label>
+            <input type="text" class="form-control" title="">
+    </div>
+    <div class="form-group">
+        <label>密码</label>
+        <input type="password" class="form-control" title="">
+    </div>
+
+
+    <button class="btn btn-primary">提交</button>
+</form>
+
+<hr >
+
+<!-- 栅格系统 -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">Lorem ipsum dolor sit amet.</div>
+        <div class="col-md-3">Lorem ipsum dolor sit amet.</div>
+        <div class="col-md-3">Lorem ipsum dolor sit amet.</div>
+        <div class="col-md-3">Lorem ipsum dolor sit amet.</div>
+    </div>
+</div>
+
+<hr>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <h3>侧栏</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="col-md-8">
+            <h1>标题</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, magni.</p>
+        </div>
+
+        <div class="col-md-2">
+            <h3>边栏</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+</div>
+
+<hr>
+<!-- 表单 -->
+<form action="#" class="container">
+    <h1>注册</h1>
+    <div class="form-inline">
+        <div class="form-group ">
+            <label for="">姓</label>
+            <input type="text" class="form-control has-warning">
+        </div>
+
+        <div class="form-group">
+            <label for="">名</label>
+            <input type="text" class="form-control">
+        </div>
+    </div>
+</form>
+
+
+
+<div class="container">
+    <h3>你的银行卡</h3>
+    <div class="row">
+        <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder="xxx">
+        </div>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder="xxx">
+        </div>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder="xxx">
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container">
+    <div class="row">
+        <div class="well">
+            <button class="btn btn-danger">XXX</button>
+            <button class="btn btn-success">这是一个按纽</button>
+            <button class="btn btn-info">这是一个按纽</button>
+            <button class="btn btn-default">这是一个按纽</button>
+            <hr>
+            <input type="button" class="btn btn-lg btn-success" value="大按纽">
+            <input type="button" class="btn btn-xs btn-success" value="超小型按纽">
+            <hr>
+            <button disabled class="btn-block btn btn-lg btn-warning"> 禁用110报警台</button>
+            <button  class="btn-block btn btn-lg btn-warning">110报警台</button>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="well">
+    <div class="btn-group">
+        <div class="btn btn-default">1</div>
+        <div class="btn btn-default">2</div>
+        <div class="btn btn-default">3</div>
+    </div>
+    <hr>
+    <div class="tool-bar">
+        <div class="btn-group">
+            <div class="btn btn-default">1</div>
+            <div class="btn btn-default">2</div>
+            <div class="btn btn-default">3</div>
+        </div>
+        <div class="btn-group">
+            <div class="btn btn-default">1</div>
+            <div class="btn btn-default">2</div>
+            <div class="btn btn-default">3</div>
+        </div>
+    </div>
+    <hr>
+    <div class="tool-bar ">
+        <div class="btn-group btn-group-sm">
+            <div class="btn btn-default">1</div>
+            <div class="btn btn-default">2</div>
+            <div class="btn btn-default">3</div>
+        </div>
+        <div class="btn-group btn-group-lg">
+            <div class="btn btn-default">1</div>
+            <div class="btn btn-default">2</div>
+            <div class="btn btn-default">3</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="tool-bar ">
+        <div class="btn-group-vertical">
+            <div class="btn btn-default">1</div>
+            <div class="btn btn-default">2</div>
+            <div class="btn btn-default">3</div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<ul class="nav nav-tabs">
+    <li class="active"><a href="javascript:">注册</a></li>
+    <li><a href="javascript:">注册</a></li>
+    <li><a href="javascript:">注册</a></li>
+</ul>
+
+<hr>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
