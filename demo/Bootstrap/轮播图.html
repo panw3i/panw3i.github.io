@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <title>图片轮播</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        .logo {
+            padding:0;
+        }
+        #myCarousel {
+            margin: 50px 0 0 0;
+        }
+        #navbar-collapse ul {
+            margin-top:0;
+        }
+        .carousel-inner img{
+            margin: 0 auto;
+        }
+        .carousel-control{
+            font-size: 100px;
+
+        }
+        .item {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body >
+
+<div id="myCarousel" class="carousel slide">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"> </li>
+        <li data-target="#myCarousel" data-slide-to="1"> </li>
+        <li data-target="#myCarousel" data-slide-to="2"> </li>
+
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active" style="background:#223240;">
+
+        </div>
+        <div class="item" style="background:#F5E4DC;">
+
+        </div>
+        <div class="item" style="background:#DE2A2D;">
+
+        </div>
+
+    </div>
+
+    <a href="#myCarousel" data-slide="prev" class="carousel-control left">
+        <span class="glyphicon glyphicon-chevron-left"> </span>
+    </a>
+    <a href="#myCarousel" data-slide="next" class="carousel-control right">
+        <span class="glyphicon glyphicon-chevron-right"> </span>
+    </a>
+</div>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+
+
+
+    //自动播放
+    $("#myCarousel").carousel({
+        interval :2000
+    });
+
+
+</script>
+</body>
+</html>

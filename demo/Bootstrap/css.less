@@ -9,3 +9,23 @@
 .container-small {
   max-width: 400px;
 }
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 12px;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: 12px;
+        line-height: 1.2;
+        vertical-align: top;
+        border-top: 1px solid @red;
+      }
+    }
+  }
+}
