@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  闭包 - 
+  DOM - 
   
   </title>
   
@@ -94,234 +94,84 @@
        
 
  <script type="text/javascript">
-  $(function(){
-    $('#menu_item_index').addClass('is_active');
-  });
+	$(function(){
+		$('#menu_item_index').addClass('is_active');
+	});
 </script>
 <div class="row">
-  <div class="large-8 medium-8 columns">
-      <div class="markdown-body article-wrap">
-       <div class="article">
-          
-          <h1>闭包</h1>
-     
-        <div class="read-more clearfix">
-          <span class="date">2017/11/10</span>
-
-          <span>posted in&nbsp;</span> 
-          
-              <span class="posted-in"><a href='JavaScript.html'>JavaScript</a></span>
-           
-         
-          <span class="comments">
-            
-
-            
-          </span>
-
-        </div>
-      </div><!-- article -->
-
-      <div class="article-content">
-      <h2 id="toc_0">什么是闭包</h2>
-
-<pre><code class="language-js">    function aaa(a){
-        
-        var b = 5;
-    
-        function bbb(){
-            alert(a);
-            alert(b);
-        }
-    
-    }
-    
-    aaa();
-</code></pre>
-
-<h2 id="toc_1">垃圾回收机制</h2>
-
-<p>函数嵌套函数,内部函数可以引用外部函数的参数和变量,参数和变量不会被垃圾回收机制所收回</p>
-
-<h2 id="toc_2">闭包与垃圾回收机制</h2>
-
-<ul>
-<li><p>希望一个变量长期驻扎在内存当中</p></li>
-<li><p>避免全局变量的污染</p></li>
-</ul>
-
-<pre><code class="language-js">    function aaa(){
-        var a = 5;
-        function bbb(){
-            alert(a);
-        }
-        return bbb;
-    }
-    
-    // 局部变量累加
-    var c = aaa();
-    
-    c();
-</code></pre>
-
-<p>函数声明和函数表达式</p>
-
-<pre><code class="language-js">    /*function aaa(){
-        alert(1);
-    }
-    aaa();*/
-    
-    (function(){
-        alert(1);
-    })();
-</code></pre>
-
-<ul>
-<li> 私有成员的存在</li>
-</ul>
-
-<pre><code class="language-js">    var aaa = (function(){
-    
-        var a = 1;
-        
-        function bbb(){
-            a++;
-            alert(a);
-        }
-        
-        function ccc(){
-            a++;
-            alert(a);
-        }
-        
-        return {
-            
-            b : bbb,
-            c : ccc
-            
-        }
-    
-    })();
-    
-    
-    aaa.b();  //2
-    aaa.c();  //3
-    
-    // 外部无法访问到
-    //alert(a);
-    //alert(bbb);
-</code></pre>
-
-<h2 id="toc_3">闭包的作用</h2>
-
-<ul>
-<li><p>模块化代码</p></li>
-<li><p>在循环中直接找到对应元素的索引</p></li>
-</ul>
-
-<pre><code class="language-js">    var aLi = document.getElementsByTagName(&#39;li&#39;);
-    
-    
-    /* 按照传统的for循环注册点击事件,点击事件并没有立即执行,当点击事件发生时,
-    函数查找变量i的值,i的值为最后一次i的赋值 */
-    /*for(var i=0;i&lt;aLi.length;i++){
-    
-        (function(i){
-        
-            aLi[i].onclick = function(){
-                alert(i);
-            };
-        
-        })(i);
-        
-        
-    }*/
-    
-    for(var i=0;i&lt;aLi.length;i++){
-    
-    // 参数形成闭包
-    
-            aLi[i].onclick = (function(i){   //2 
-            
-                return function(){
-                    alert(i);    // 3
-                }
+	<div class="large-8 medium-8 columns">
+		<div class="markdown-body home-categories">
+		
+			<div class="article">
+                <a class="clearlink" href="15142804460346.html">
                 
-            })(i);  // 1 
+                  <h1>阻止事件响应</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<pre><code class="language-js">
+    document.onkeydown = function (e) {
 
+
+        e = e || window.event; // get event
+
+
+        if (e.ctrlKey) {
+
+            var c = e.which || e.keyCode;//Get key code
+
+            switch (c) {
+                case 83://Block Ctrl+S
+                    e.preventDefault();  // 阻止事件响应
+                    e.stopPropagation();  // 阻止事件冒泡
+                    break;
+            }
+        }
+    };
+
+</code></pre>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/12/26</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='DOM.html'>DOM</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
         
-    }
-    
-};
-
-// 2处是函数 声明 时的要传入的参数 , 1 是接受传入的参数 , 3 同部函数要访问的变量i 
-</code></pre>
-
-<h2 id="toc_4">闭包引发的内存泄露问题及解决方案</h2>
-
-<pre><code class="language-js">//IE下会引发内存泄漏
-
-/*window.onload = function(){
-    var oDiv = document.getElementById(&#39;div1&#39;);
-    
-    oDiv.onclick = function(){
-        alert(oDiv.id);
-    };
-    
-    window.onunload = function(){
-        oDiv.onclick = null;
-    };
-    
-};*/
-
-window.onload = function(){
-    var oDiv = document.getElementById(&#39;div1&#39;);
-    
-    var id = oDiv.id;
-    
-    oDiv.onclick = function(){
-        alert(id);
-    };
-    
-    oDiv = null;
-    
-};
-</code></pre>
+              
 
 
-    
-
-      </div>
-
-      <div class="row">
-        <div class="large-6 columns">
-        <p class="text-left" style="padding:15px 0px;">
-      
-          <a href="15104605458333.html" 
-          title="Previous Post: 禁止右键">&laquo; 禁止右键</a>
-      
-        </p>
-        </div>
-        <div class="large-6 columns">
-      <p class="text-right" style="padding:15px 0px;">
-      
-      </p>
-        </div>
-      </div>
-      <div class="comments-wrap">
-        <div class="share-comments">
-          
-
-          
-
-          
-        </div>
-      </div>
-    </div><!-- article-wrap -->
-  </div><!-- large 8 -->
-
-
-
+			<div class="row">
+			  <div class="large-6 columns">
+			  <p class="text-left" style="padding-top:25px;">
+			   
+			  </p>
+			  </div>
+			  <div class="large-6 columns">
+			<p class="text-right" style="padding-top:25px;">
+			
+			</p>
+			  </div>
+			</div>
+		</div>
+	</div><!-- large 8 -->
 
  <div class="large-4 medium-4 columns">
   <div class="hide-for-small">

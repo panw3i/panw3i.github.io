@@ -79,6 +79,8 @@
 
         
             <li><a href="JavaScript.html">JavaScript</a></li>
+        
+            <li><a href="DOM.html">DOM</a></li>
          
 
       </ul>
@@ -100,6 +102,59 @@
 	<div class="large-8 medium-8 columns">
 		<div class="markdown-body home-categories">
 		
+			<div class="article">
+                <a class="clearlink" href="15142804460346.html">
+                
+                  <h1>阻止事件响应</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<pre><code class="language-js">
+    document.onkeydown = function (e) {
+
+
+        e = e || window.event; // get event
+
+
+        if (e.ctrlKey) {
+
+            var c = e.which || e.keyCode;//Get key code
+
+            switch (c) {
+                case 83://Block Ctrl+S
+                    e.preventDefault();  // 阻止事件响应
+                    e.stopPropagation();  // 阻止事件冒泡
+                    break;
+            }
+        }
+    };
+
+</code></pre>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/12/26</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='DOM.html'>DOM</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
 			<div class="article">
                 <a class="clearlink" href="15142757119298.html">
                 
@@ -493,6 +548,8 @@ window.onload = function(){
       	<p class="cat-list">
         
             <a href="JavaScript.html"><strong>JavaScript</strong></a>
+        
+            <a href="DOM.html"><strong>DOM</strong></a>
          
         </p>
 
@@ -507,6 +564,12 @@ window.onload = function(){
                 <div class="side-content">
                 <ul class="posts-list">
 	      
+		      
+			      <li class="post">
+			        <a href="15142804460346.html">阻止事件响应</a>
+			      </li>
+		     
+		  
 		      
 			      <li class="post">
 			        <a href="15142757119298.html"></a>
@@ -532,10 +595,6 @@ window.onload = function(){
 		     
 		  
 		      
-			      <li class="post">
-			        <a href="15103199182873.html">闭包</a>
-			      </li>
-		     
 		   
 		  		</ul>
                 </div>
