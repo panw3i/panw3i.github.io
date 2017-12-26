@@ -1,0 +1,23 @@
+.btn.btn-primary {
+  border: 1px solid #000;
+  background-color: #a20;
+}
+.container-small {
+  max-width: 400px;
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 12px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 12px;
+  line-height: 1.2;
+  vertical-align: top;
+  border-top: 1px solid #a20;
+}

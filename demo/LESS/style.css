@@ -1,0 +1,33 @@
+#header {
+  color: black;
+}
+#header .navigation {
+  font-size: 20px;
+}
+#header .logo {
+  background-color: wheat;
+}
+#header .logo:hover {
+  text-decoration: none;
+}
+.class {
+  color: #b3b3b3;
+  display: block;
+}
+ul:first-child {
+  color: red;
+}
+ul > p {
+  color: blue;
+}
+.box200 {
+  width: 200px
+;
+  height: 200px
+;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #222222;
+}
